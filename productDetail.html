@@ -247,7 +247,13 @@
 										</tr>
 									</tbody>
 								</table>
-								<button class="btn btn-primary" style="float: right ;">후기작성하기</button>
+								<button id="review" class="btn btn-primary" style="float: right ;">후기작성하기</button>
+								<br/>
+								<div id="reviewbox">
+
+								</div>
+								<br/>
+
 							</div>
 						</section>
 						<!-- comment section -->
@@ -290,12 +296,10 @@
 										</tr>
 									</tbody>
 								</table>
-								<button class="btn btn-primary" style="float: right ;">상품문의하기</button>								
+								<a href="boardWrite.html" class="btn btn-primary" style="float: right ;">상품문의하기</a>							
 							</div>
 						</section>
 						<!-- board section -->
-								
-
 					</div>
 				</div>
 			</div>
@@ -382,6 +386,35 @@
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	
+
+	<script>
+		$('#review').on('click',function(){
+			let str = "";
+			str += "<div class='form-group'>";			
+			str += "<div class='card-body'>";
+			str += "<label>제목: </label><br/>";
+			str += "<input type='text' class='form-control' style='height: 35px; width: 500px;'>";
+			str += "<label>내용: </label><br/>";
+			str += "<textarea id='content' rows='4' class='form-control'>내용</textarea>";
+			str += "</div><br/>";
+			str += "<div class='card-footer'>";
+			str += "<button id='comment--save--submit' type='button' class='btn btn-primary' style='float: right;''>등록</button>";
+			str += "</div></div>";
+
+			$('#reviewbox').prepend(str);	
+
+		});
+
+
+
+
+	</script>
+
+
+
+
+
 
 	</body>
 </html>
